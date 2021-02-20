@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>
+    {% for review in reviews %}
+        {% include '_review.html' %}
+    {% endfor %}
+</p>
+{% endblock %}

@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style>
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              background-color: #666;
+            }
+            
+            li {
+              float: left;
+            }
+            
+            li a {
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+            
+            li a:hover {
+              background-color: #111;
+        </style>
+    </head>
+        <style>
+        body {
+            background: url("{{ url_for('static', filename='images/made2crave_logo_transparent.png') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: "Brush Script MT", cursive;
+            font-size: x-large;
+        }
+        </style>
+        {% if title %}
+            <title>{{ title }}</title>
+        {% else %}
+            <title>Welcome to Made2Crave</title>
+        {% endif %}
+    </head>
+    <body>
+        <ul style="font-size: xx-large;">
+            <li><img src="{{ url_for('static', filename='images/made2crave_masthead_transparent.png') }}"></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('classes') }}">Classes</a></li>
+            <li><a href="{{ url_for('personal_training') }}">Personal Training</a></li>
+            <li><a href="{{ url_for('reviews') }}">Reviews</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('connect') }}">Connect</a></li>
+        </ul>
+        <div>
+        {% block content %}{% endblock %}
+    </body>
+</html>
+        
